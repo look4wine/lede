@@ -1,0 +1,22 @@
+name: HelloWorld_Test1
+on: push
+jobs:
+  my_first_job:
+    name: My first job_1
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    - name: Run a single-line script
+      run: echo "Hello World! On Test 1"
+  my_second_job:
+    name: My second job_2
+    runs-on: macos-latest
+    steps:
+    - name: Run a multi-line script
+      env:
+        MY_VAR: Hello World!
+        MY_NAME: P3TERX
+      run: |
+        echo $MY_VAR
+        echo My name is $MY_NAME
